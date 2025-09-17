@@ -10,25 +10,22 @@ import {
   Star,
   Shield,
   Zap,
-  Brain,
-  Code,
-  ImageIcon,
   MessageSquare,
   CheckCircle,
-  AlertTriangle,
   ExternalLink,
   Menu,
   X,
   Github,
-  Twitter,
   Linkedin,
   Sparkles,
   Rocket,
   Award,
   Users,
+  Instagram,
 } from "lucide-react"
 
 export default function GoogleStudentAmbassador() {
+
   const [currentStep, setCurrentStep] = useState(0)
   const [isMenuOpen, setIsMenuOpen] = useState(false)
   const [scrollY, setScrollY] = useState(0)
@@ -59,97 +56,138 @@ export default function GoogleStudentAmbassador() {
 
   const steps = [
     {
-      title: "Persiapan Akun Mahasiswa",
-      description: "Pastikan Anda memiliki email mahasiswa yang valid dan aktif dari institusi pendidikan resmi",
-      image: "/student-email-verification-screen.jpg",
+      title: "1. Siapkan Email Google",
+      description:
+        "Pilih Email/Akun Google yang ingin kamu upgrade ke Google Pro",
+      image: "/steps/google-email.png",
       details: [
-        "Email harus berakhiran .edu atau domain universitas",
-        "Akun email harus aktif dan dapat diakses",
-        "Siapkan dokumen pendukung status mahasiswa",
+        "Pastikan akun Google aktif (email, recovery email, nomor telepon terpasang).",
+        "Aktifkan 2-factor authentication (2FA) untuk keamanan akun.",
+        "Catatan: Email ini yang akan di upgrade ke Google Pro Account"
       ],
+      button: false,
     },
     {
-      title: "Kunjungi Google AI Studio",
-      description: "Buka halaman resmi Google AI Studio dan jelajahi antarmuka yang tersedia",
-      image: "/google-ai-studio-homepage-interface.jpg",
+      title: "2. Kunjungi Web Resmi Pendaftaran",
+      description:
+        "Website ini digunakan untuk upgrade akun Google ke Google Pro secara gratis untuk 1 tahun",
+      image: "/steps/official-web.png",
       details: [
-        "Pastikan koneksi internet stabil",
-        "Gunakan browser terbaru (Chrome/Firefox/Safari)",
-        "Aktifkan JavaScript di browser Anda",
+        "Pastikan koneksi jaringan stabil",
+        "Setelah ke website resmi, upgrade akunmu disana dengan mengikuti panduan disini sebagai bantuan"
       ],
+      button: true,
     },
     {
-      title: "Pilih Sign Up",
-      description: "Klik tombol 'Get Started' atau 'Sign Up' untuk memulai proses pendaftaran",
-      image: "/google-ai-studio-sign-up-button-highlighted.jpg",
+      title: "3. Mulai Proses Verifikasi",
+      description:
+        "Kunjungi halaman penawaran Gemini, lalu klik tombol 'Verifikasi kelayakan' untuk memulai.",
+      image: "/steps/verif.png",
       details: [
-        "Cari tombol pendaftaran di halaman utama",
-        "Pilih opsi 'Student Account' jika tersedia",
-        "Siapkan informasi pribadi yang diperlukan",
+        "Untuk student: KTM, surat keterangan aktif kuliah, atau email institusi.",
+        "Pastikan foto/scan dokumen jelas, ukuran file sesuai batas, dan data terbaca.",
+        "Simpan salinan untuk backup jika diperlukan verifikasi ulang.",
       ],
+      button: false,
     },
     {
-      title: "Verifikasi Status Mahasiswa",
-      description: "Upload dokumen yang membuktikan status mahasiswa Anda seperti KTM atau surat keterangan",
-      image: "/student-verification-document-upload-interface.jpg",
+      title: "4. Isi Data Diri",
+      description:
+        "Lengkapi formulir verifikasi dengan data yang valid, seperti negara, nama universitas, nama lengkap, tanggal lahir dan email domain kampus sesuai dengan data akademik kamu.",
+      image: "/steps/information.png",
       details: [
-        "Upload KTM (Kartu Tanda Mahasiswa) yang masih berlaku",
-        "Atau surat keterangan aktif kuliah dari kampus",
-        "Pastikan dokumen jelas dan dapat dibaca",
+        "Isi data pembeli (nama, alamat penagihan) sesuai yang diminta.",
       ],
+      button: false,
     },
     {
-      title: "Aktivasi Akun",
-      description: "Tunggu email konfirmasi dan ikuti instruksi untuk mengaktifkan akun Anda",
-      image: "/email-confirmation-activation-screen.jpg",
+      title: "5. Tambahkan Metode Pembayaran (E-Wallet)",
+      description:
+        "PENTING: Ini tidak akan terpotong sama sekali, hanya untuk verifikasi saja. Jadi, setelah 1 tahun jangan lupa di non-aktfikan jika layanan tidak ingin dilanjutkan dan agar pembayaran tidak terpotong",
+      image: "/steps/wallet.png",
       details: [
-        "Cek inbox dan folder spam email Anda",
-        "Klik link aktivasi dalam email konfirmasi",
-        "Proses verifikasi biasanya 1-3 hari kerja",
+        "Buka menu Payment methods / Billing di produk Google yang dipakai.",
+        "Pilih 'Tambahkan metode pembayaran' lalu cari opsi e-wallet (GoPay, OVO, DANA, ShopeePay — tergantung negara dan dukungan).",
+        "Jika opsi e-wallet tidak muncul, gunakan metode alternatif (kartu debit/virtual, pulsa, atau hubungi support).",
+        "Pastikan saldo/limit e-wallet mencukupi dan siapkan OTP/konfirmasi di aplikasi e-wallet saat proses.",
       ],
+      button: false,
     },
     {
-      title: "Mulai Menggunakan",
-      description: "Selamat! Anda sudah bisa menggunakan Google AI Pro gratis selama 1 tahun penuh",
-      image: "/google-ai-pro-dashboard-welcome-screen.jpg",
+      title: "6. Aktivasi Akun Pro & Akses Fitur",
+      description:
+        "Setelah pembayaran dan/atau verifikasi dokumen sukses, aktifkan dan cek fitur Pro Anda.",
+      image: "/steps/google.png",
       details: [
-        "Akses semua fitur premium Google AI",
-        "Nikmati kredit gratis untuk eksperimen",
-        "Bergabung dengan komunitas developer AI",
+        "Cek email konfirmasi aktivasi (inbox & spam).",
+        "Masuk ke dashboard Pro untuk melihat kuota, setting, dan resource yang tersedia.",
       ],
+      button: false,
     },
-  ]
+    {
+      title: "7. Selamat Anda Berhasil!",
+      description:
+        "Anda bisa langsung eksplor banyak fitur-fitur Pro dari Google",
+      image: "/steps/berhasil.png",
+      details: [
+        "Google Gemini Pro, Veo3, Deep Research, dll",
+        "2000 GB Storage untuk Google Drive",
+        "Dan masih banyak manfaat lainnya.",
+      ],
+      button: false,
+    },
+  ];
 
   const aiProducts = [
     {
-      name: "Tier Gemini Rising Star",
-      description: "Langkah awal untuk menjadi Google Student Ambassador dengan berbagai merchandise eksklusif",
-      icon: <img src="/gsa-assets/Bintang_.png" alt="Rising Star" className="w-12 h-12" />,
-      features: ["Merchandise Eksklusif dari Google: Tote Bag, Laptop Sleeve, Cap, Card Holder, Keychain, Sticker Sets"],
+      name: "Akses Model & Fitur Premium",
+      description:
+        "Akses prioritas ke model dan fitur terbaru — inference lebih cepat, model berkapasitas lebih besar, dan opsi parameter lanjutan.",
+      icon: <img src="/gsa-assets/Dino.png" alt="Gemini Pro" className="w-12 h-12" />,
+      features: [
+        "Akses model premium dengan latency lebih rendah",
+        "Pilihan model untuk riset, eksperimen, dan produksi",
+        "Kontrol parameter untuk keluaran yang lebih terarah",
+      ],
       gradient: "from-blue-500 to-cyan-500",
     },
     {
-      name: "Tier Gemini Achiever",
-      description: "Tingkatkan kemampuan dan dapatkan merchandise eksklusif tambahan",
-      icon: <img src="/gsa-assets/Roket.png" alt="Achiever" className="w-12 h-12" />,
-      features: ["Seluruh hadiah di Tier Gemini Rising Star", "Merchandise Eksklusif dari Google: Backpack & Varsity Jacket"],
+      name: "Kredit & Kuota Lebih Besar",
+      description:
+        "Kuota pemakaian lebih besar dan kredit yang cocok untuk eksperimen intensif atau proyek produksi.",
+      icon: <img src="/gsa-assets/Roket.png" alt="Credits" className="w-12 h-12" />,
+      features: [
+        "Kuota inference dan training lebih banyak",
+        "Limit API lebih tinggi untuk aplikasi real-time",
+        "Batch processing & long-running jobs didukung lebih baik",
+      ],
       gradient: "from-green-500 to-emerald-500",
     },
     {
-      name: "Tier Gemini Trailblazer",
-      description: "Tier tertinggi dengan berbagai keuntungan eksklusif",
-      icon: <img src="/gsa-assets/Dino.png" alt="Trailblazer" className="w-12 h-12" />,
-      features: ["Seluruh hadiah di Tier Gemini Rising Star dan Gemini Achiever", "Earbuds/TWS", "Plakat Pencapaian Pelatihan"],
-      gradient: "from-orange-500 to-red-500",
+      name: "Google Premium Technology and Tools",
+      description:
+        "Fitur seperti Veo3, Deep Research, Gemini, Nanobanana",
+      icon: <img src="/gsa-assets/Bintang_.png" alt="Integrations" className="w-12 h-12" />,
+      features: [
+        "API & SDK untuk integrasi mudah ke aplikasi",
+        "Integrasi native ke Google Cloud/BigQuery/Storage",
+        "Deployment, versioning, dan monitoring bawaan",
+      ],
+      gradient: "from-indigo-500 to-violet-500",
     },
     {
-      name: "Google Student Ambassador",
-      description: "Keuntungan menjadi bagian dari program Google Student Ambassador",
-      icon: <img src="/gsa-assets/Full border gsa.png" alt="GSA" className="w-12 h-12" />,
-      features: ["Welcome Kit: Merchandise Eksklusif dari Google: Shirt, Tumbler, Pouch, Notebook, Pen, Lanyard, Pin"],
-      gradient: "from-purple-500 to-pink-500",
+      name: "Prioritas Support & SLAs",
+      description:
+        "Akses support prioritas, dokumentasi eksklusif, dan SLA yang lebih jelas untuk kebutuhan bisnis/produksi.",
+      icon: <img src="/gsa-assets/Love.png" alt="Support" className="w-12 h-12" />,
+      features: [
+        "Support teknis prioritas (ticket/chat/email)",
+        "Panduan onboarding dan best practices",
+        "Kemudahan eskalasi untuk isu kritikal",
+      ],
+      gradient: "from-orange-400 to-red-500",
     },
-  ]
+  ];
 
   const scrollToSection = (sectionId: string) => {
     document.getElementById(sectionId)?.scrollIntoView({ behavior: "smooth" })
@@ -190,7 +228,7 @@ export default function GoogleStudentAmbassador() {
             <div className="flex items-center">
               <img src="/gsa-assets/google-logo.png" alt="Google Logo" className="h-8 mr-3" />
               <div className="text-2xl font-bold bg-gradient-to-r from-primary to-secondary bg-clip-text text-transparent">
-                Google Student Ambassador
+                Claim Google Pro Guide
               </div>
             </div>
 
@@ -274,18 +312,18 @@ export default function GoogleStudentAmbassador() {
         <div className="container mx-auto text-center relative z-10">
           <div className={`transition-all duration-1000 ${isVisible ? "animate-fade-in-up" : "opacity-0"}`}>
             <Badge className="mb-8 bg-primary text-primary-foreground hover:shadow-lg hover-lift px-6 py-2 text-sm font-semibold">
-              <Sparkles className="w-4 h-4 mr-2" />🎓 Program Mahasiswa
+              <Sparkles className="w-4 h-4 mr-2" />🎓 Program Pelajar Indonesia
             </Badge>
 
             <h1 className="text-6xl md:text-8xl font-bold text-foreground mb-8 text-balance leading-tight">
               Buka Potensimu dengan{" "}
               <span className="bg-gradient-to-r from-primary via-secondary to-primary bg-clip-text text-transparent animate-gradient">
-                Google Student Ambassador
+                Google Paket Pro
               </span>
             </h1>
 
             <p className="text-xl md:text-2xl text-muted-foreground mb-12 max-w-4xl mx-auto text-pretty leading-relaxed">
-              Kami mengajak mahasiswa/i menjadi duta inovasi dan teknologi di kampus masing-masing, dengan berfokus pada alat-alat Google AI. Setiap kampus dapat memiliki beberapa Google Student Ambassador.
+              Kami mengajak semua pelajar di Indonesia untuk turut menggunakan Teknologi AI terbaik dan termaju dengan gratis bersama Google!
             </p>
 
             <div className="flex flex-col sm:flex-row gap-6 justify-center mb-16">
@@ -304,7 +342,7 @@ export default function GoogleStudentAmbassador() {
                 className="border-2 border-primary/30 text-primary hover:bg-primary/10 hover:border-primary hover-lift px-10 py-6 text-lg font-semibold rounded-2xl bg-gradient-glass"
                 asChild
               >
-                <a href="https://developers.google.com/community/gdsc" target="_blank" rel="noopener noreferrer">
+                <a href="https://gsaid.short.gy/228" target="_blank" rel="noopener noreferrer">
                   <ExternalLink className="mr-3 w-6 h-6" />
                   Kunjungi Website Resmi
                 </a>
@@ -323,19 +361,19 @@ export default function GoogleStudentAmbassador() {
                       <ul className="text-blue-700 space-y-3">
                         <li className="flex items-center">
                           <Star className="w-4 h-4 mr-3 text-blue-600" />
-                          Mahasiswa aktif di perguruan tinggi
+                          Pelajar aktif di Indonesia
                         </li>
                         <li className="flex items-center">
                           <Star className="w-4 h-4 mr-3 text-blue-600" />
-                          Memiliki minat di bidang teknologi Google
+                          Memiliki email Google untuk di Upgrade
                         </li>
                         <li className="flex items-center">
                           <Star className="w-4 h-4 mr-3 text-blue-600" />
-                          Kemampuan komunikasi yang baik
+                          Memiliki email sekolah/institusi/kampus
                         </li>
                         <li className="flex items-center">
                           <Star className="w-4 h-4 mr-3 text-blue-600" />
-                          Aktif dalam komunitas kampus
+                          Mengikuti ketentuan layanan Google Pro
                         </li>
                       </ul>
                     </div>
@@ -354,19 +392,19 @@ export default function GoogleStudentAmbassador() {
                       <ul className="text-green-700 space-y-3">
                         <li className="flex items-center">
                           <CheckCircle className="w-4 h-4 mr-3 text-green-600" />
-                          Merchandise eksklusif Google
+                          Akses penuh teknologi Google Pro
                         </li>
                         <li className="flex items-center">
                           <CheckCircle className="w-4 h-4 mr-3 text-green-600" />
-                          Akses ke pelatihan dan sertifikasi
+                          Gemini, Veo3, Deep Research, dll
                         </li>
                         <li className="flex items-center">
                           <CheckCircle className="w-4 h-4 mr-3 text-green-600" />
-                          Jaringan dengan Google dan industri
+                          Bonus 2000 GB Storage Google Drive
                         </li>
                         <li className="flex items-center">
                           <CheckCircle className="w-4 h-4 mr-3 text-green-600" />
-                          Pengalaman kepemimpinan berharga
+                          Dan masih ada banyak manfaat lainnya
                         </li>
                       </ul>
                     </div>
@@ -383,23 +421,25 @@ export default function GoogleStudentAmbassador() {
           <div className="text-center mb-16">
             <Badge className="mb-6 bg-primary text-primary-foreground px-6 py-2">
               <Award className="w-4 h-4 mr-2" />
-              Proses Pendaftaran
+              Step by Step Claim Google Pro
             </Badge>
-            <h2 className="text-5xl font-bold text-foreground mb-6">Cara Menjadi Google Student Ambassador</h2>
+            <h2 className="text-5xl font-bold text-foreground mb-6">Cara Claim Google Pro</h2>
             <p className="text-xl text-muted-foreground max-w-3xl mx-auto text-pretty">
-              Ikuti langkah-langkah berikut untuk bergabung dengan program Google Student Ambassador
+              Ikuti langkah-langkah berikut untuk mendapatkan Paket Google Pro Gratis selama 1 tahun.
             </p>
           </div>
 
           <div className="mb-16 max-w-4xl mx-auto">
+
             <div className="flex justify-between items-center mb-6">
               <span className="text-lg font-semibold text-foreground">
                 Langkah {currentStep + 1} dari {steps.length}
               </span>
-              <span className="text-lg font-semibold bg-gradient-primary bg-clip-text text-transparent">
+              <span className="text-lg font-semibold bg-gradient-primary bg-clip-text text-white p-2">
                 {Math.round(((currentStep + 1) / steps.length) * 100)}% Selesai
               </span>
             </div>
+
             <div className="relative">
               <Progress
                 value={((currentStep + 1) / steps.length) * 100}
@@ -475,6 +515,18 @@ export default function GoogleStudentAmbassador() {
                                 Selanjutnya
                                 <ChevronRight className="ml-2 w-4 h-4" />
                               </Button>
+                            )}
+                            {step.button && (
+                              <a 
+                                href="https://gsaid.short.gy/228" 
+                                target="_blank" 
+                                rel="noopener noreferrer"
+                              >
+                                <Button className="bg-gradient-primary hover:shadow-lg hover-lift">
+                                  Kunjungi Web Resmi
+                                  <ChevronRight className="ml-2 w-4 h-4" />
+                                </Button>
+                              </a>
                             )}
                           </div>
                         )}
@@ -602,13 +654,13 @@ export default function GoogleStudentAmbassador() {
                 komunitas mahasiswa Indonesia.
               </p>
               <div className="flex space-x-6">
-                <a href="#" className="text-slate-400 hover:text-primary transition-colors duration-300 hover-lift">
+                <a href="https://github.com/StyNW7" className="text-slate-400 hover:text-primary transition-colors duration-300 hover-lift" target="_blank">
                   <Github className="w-8 h-8" />
                 </a>
-                <a href="#" className="text-slate-400 hover:text-primary transition-colors duration-300 hover-lift">
-                  <Twitter className="w-8 h-8" />
+                <a href="https://www.instagram.com/snw.77/" className="text-slate-400 hover:text-primary transition-colors duration-300 hover-lift" target="_blank">
+                  <Instagram className="w-8 h-8" />
                 </a>
-                <a href="#" className="text-slate-400 hover:text-primary transition-colors duration-300 hover-lift">
+                <a href="https://www.linkedin.com/in/stanley-nathanael-wijaya" className="text-slate-400 hover:text-primary transition-colors duration-300 hover-lift" target="_blank">
                   <Linkedin className="w-8 h-8" />
                 </a>
               </div>
@@ -619,38 +671,32 @@ export default function GoogleStudentAmbassador() {
               <ul className="space-y-4 text-slate-300">
                 <li>
                   <a
-                    href="https://aistudio.google.com"
+                    href="https://gsaid.short.gy/228"
                     className="hover:text-primary transition-colors duration-300 flex items-center"
+                    target="_blank"
                   >
                     <ExternalLink className="w-4 h-4 mr-3" />
-                    Google AI Studio
+                    Claim Google Pro Disni
                   </a>
                 </li>
                 <li>
                   <a
-                    href="https://developers.google.com/ai"
+                    href="https://stanley-n-wijaya.notion.site/Google-Pro-Dashboard-27173555b71f80218822f314071d052d?source=copy_link"
                     className="hover:text-primary transition-colors duration-300 flex items-center"
+                    target="_blank"
                   >
                     <ExternalLink className="w-4 h-4 mr-3" />
-                    Google AI Documentation
+                    Google Student Ambassador Dashboard
                   </a>
                 </li>
                 <li>
                   <a
-                    href="https://cloud.google.com/ai"
+                    href="https://stanley-n-wijaya.notion.site/Google-Pro-FAQ-27173555b71f8099b468fa900a50fcf7?source=copy_link"
                     className="hover:text-primary transition-colors duration-300 flex items-center"
+                    target="_blank"
                   >
                     <ExternalLink className="w-4 h-4 mr-3" />
-                    Google Cloud AI
-                  </a>
-                </li>
-                <li>
-                  <a
-                    href="https://support.google.com"
-                    className="hover:text-primary transition-colors duration-300 flex items-center"
-                  >
-                    <ExternalLink className="w-4 h-4 mr-3" />
-                    Google Support
+                    FAQ and Help
                   </a>
                 </li>
               </ul>
@@ -661,15 +707,14 @@ export default function GoogleStudentAmbassador() {
               <div className="space-y-4 text-slate-300">
                 <p className="flex items-center">
                   <Users className="w-5 h-5 mr-3 text-primary" />
-                  Email: info@googleaipro-guide.com
+                  Email: snw.gsa@gmail.com
                 </p>
                 <p className="flex items-center">
                   <MessageSquare className="w-5 h-5 mr-3 text-primary" />
-                  Telegram: @GoogleAIProGuide
+                  WhatsApp: 0821-4811-2379
                 </p>
                 <p className="text-sm text-slate-400 leading-relaxed mt-6">
-                  Website ini tidak berafiliasi resmi dengan Google. Dibuat untuk tujuan edukasi dan membantu mahasiswa
-                  Indonesia mengakses teknologi AI terdepan.
+                  Website ini dibuat oleh Stanley sebagai Google Student Ambassador. Dibuat untuk tujuan edukasi dan membantu mahasiswa Indonesia mengakses teknologi AI terdepan.
                 </p>
               </div>
             </div>
@@ -677,7 +722,7 @@ export default function GoogleStudentAmbassador() {
 
           <div className="border-t border-slate-700 pt-8 text-center">
             <p className="text-slate-400 text-lg">
-              © 2024 Google AI Pro Guide. Dibuat dengan Next.js, Tailwind CSS, dan ❤️ untuk mahasiswa Indonesia.
+              © 2025. Dibuat oleh <a href="https://www.instagram.com/snw.77/">Stanley Nathanael Wijaya</a> 💙 untuk mahasiswa Indonesia.
             </p>
           </div>
         </div>
